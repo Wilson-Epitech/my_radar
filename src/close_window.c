@@ -5,7 +5,7 @@
 ** close_window
 */
 
-#include "../includes/shortcut.h"
+#include "../includes/lib.h"
 
 void close_window(sfRenderWindow *window, sfEvent event)
 {

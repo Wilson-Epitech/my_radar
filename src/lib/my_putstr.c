@@ -5,7 +5,7 @@
 ** my_putstr
 */
 
-#include "../../includes/shortcut.h"
+#include "../../includes/lib.h"
 
 int my_putstr(char const *str)
 {
