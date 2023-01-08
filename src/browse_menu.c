@@ -46,6 +46,8 @@ void game_state_1(RADAR_T *ALL)
     if (ALL->state.game_state == 1) {
         sfRenderWindow_drawSprite(ALL->settings.window, ALL->sprite.bg, NULL);
         draw_sprite(ALL);
+        sfRenderWindow_drawRectangleShape(ALL->settings.window,
+            ALL->hitbox.rectangle, NULL);
     }
 }
 

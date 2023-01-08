@@ -18,9 +18,6 @@ void game_window(RADAR_T *ALL)
             close_window(ALL->settings.window, ALL->settings.event);
         }
         sfRenderWindow_clear(ALL->settings.window, sfColor_fromRGB(0, 0, 0));
-        sfCircleShape_setOutlineColor(ALL->hitbox.circle,
-                sfColor_fromRGB(218, 250, 255));
-        sfCircleShape_setPosition(ALL->hitbox.circle, hitbox_pos);
         browse_menu(ALL);
         sfRenderWindow_display(ALL->settings.window);
     }
@@ -41,15 +38,22 @@ int flag_h(void)
 int main(int ac, char **av)
 {
     RADAR_T ALL;
-    error_loop(&ALL, ac, av);
+    init(&ALL);
+    init2(&ALL);
+    int error = error_loop(ac, av);
+    if (error == 84) {
+        return 84;
+    }
     if (ac == 2 && ( av[1][0] == '-' && av[1][1] == 'h')) {
         flag_h();
         return 0;
     }
-    init(&ALL);
-    init2(&ALL);
+    first_parcing(&ALL, ac, av);
+    TOWER_T tower[ALL.aircraft.nb_aircraft];
+    AIRCRAFT_T aircraft[ALL.tower.nb_tower];
+    func_getline(&ALL, av, aircraft, tower);
+    init_pos(&ALL, aircraft, tower);
     manage_mouse_click(ALL.settings.window);
-    func_getline(&ALL, ac, av);
     if (ac == 2 && av[1][0] != '-') {
         game_window(&ALL);
     }

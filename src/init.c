@@ -55,13 +55,6 @@ void init_sprite_action(RADAR_T *ALL)
     ALL->sprite_action.size_bg.x = 3;
     ALL->sprite_action.size_bg.y = 3;
     sfSprite_scale(ALL->sprite.bg, ALL->sprite_action.size_bg);
-    ALL->sprite_action.size_sp_tower.x = 0.10;
-    ALL->sprite_action.size_sp_tower.y = 0.10;
-    sfSprite_scale(ALL->sprite.sp_tower, ALL->sprite_action.size_sp_tower);
-    ALL->sprite_action.size_sp_aircraft.x = 0.10;
-    ALL->sprite_action.size_sp_aircraft.y = 0.10;
-    sfSprite_scale(ALL->sprite.sp_aircraft,
-        ALL->sprite_action.size_sp_aircraft);
     ALL->sprite_action.size_bg_menu.x = 1;
     ALL->sprite_action.size_bg_menu.y = 0.9;
     sfSprite_scale(ALL->sprite.bg_menu, ALL->sprite_action.size_bg_menu);

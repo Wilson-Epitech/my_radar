@@ -12,6 +12,8 @@ LDFLAGS = 	-lcsfml-graphics -lcsfml-window -lcsfml-system -lcsfml-audio
 SRC	=	main.c								\
 		src/init.c		 					\
 		src/init2.c							\
+		src/init_pos.c						\
+		src/first_parcing.c					\
 		src/getline.c						\
 		src/browse_menu.c					\
 		src/error_handling.c    			\

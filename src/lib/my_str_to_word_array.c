@@ -30,16 +30,23 @@ int strlencustom(char const *str)
     return nb + 1;
 }
 
+void fix_spaces(char const *str, int *i)
+{
+    while (str[(*i) + 1] == ' ') {
+        (*i)++;
+    }
+}
+
 char **word_array(char **result, char const *str)
 {
     int x = 0;
     int y = 0;
     int i = 0;
-
     while (str[i] != '\0') {
         if ((str[i] < '0' || str[i] > '9')
             && (str[i] < 'a' || str[i] > 'z')
             && (str[i] < 'A' || str[i] > 'Z')) {
+                fix_spaces(str, &i);
             result[x][y] = '\0';
             x++;
             y = 0;
@@ -61,11 +68,11 @@ char **my_str_to_word_array(char const *str)
     int nb = strlencustom(str);
     int x = 0;
     char **result = malloc(sizeof(char*) * (nb + 1));
-
     while (str[i] != '\0') {
         if ((str[i] < '0' || str[i] > '9')
             && (str[i] < 'a' || str[i] > 'z')
             && (str[i] < 'A' || str[i] > 'Z')) {
+                fix_spaces(str, &i);
             result[x] = malloc(sizeof(char) * (count + 1));
             x++;
             count = 0;

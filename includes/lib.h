@@ -21,12 +21,20 @@ void close_window(sfRenderWindow *window, sfEvent event);
 void analyse_events(sfRenderWindow *window, sfEvent event);
 void init(RADAR_T *ALL);
 void init2(RADAR_T *ALL);
+void init_pos(RADAR_T *ALL,
+    AIRCRAFT_T aircraft[ALL->aircraft.nb_aircraft],
+    TOWER_T tower[ALL->tower.nb_tower]);
 int my_getnbr(char const *str);
 int my_putstr(char const *str);
 void my_putchar(char c);
-int error_loop(RADAR_T *ALL, int ac, char**av);
-int func_getline(RADAR_T *ALL, int ac, char **av);
+int error_loop(int ac, char**av);
+void func_getline(RADAR_T *ALL, char **av,
+    AIRCRAFT_T aircraft[ALL->aircraft.nb_aircraft],
+    TOWER_T tower[ALL->tower.nb_tower]);
 char **my_str_to_word_array(char const *str);
 int draw_sprite(RADAR_T *ALL);
 int browse_menu(RADAR_T *ALL);
+void game_state_0(RADAR_T *ALL);
+void game_state_0_2(RADAR_T *ALL);
+int first_parcing(RADAR_T *ALL, int ac, char **av);
 #endif //shortcut.h

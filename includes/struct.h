@@ -5,8 +5,6 @@
 ** struct
 */
 
-#include "lib.h"
-
 #ifndef STRUCT_H_
     #define STRUCT_H_
 
@@ -38,11 +36,15 @@
         sfVector2f size_rules_menu;
         sfVector2f size_sp_aircraft;
         sfVector2f size_sp_tower;
+        sfVector2f aircraft_pos;
+        sfVector2f tower_pos;
     } SPRITE_ACTION_T;
 
     typedef struct HITBOX {
         sfCircleShape *circle;
         sfVector2f circle_position;
+        sfRectangleShape *rectangle;
+        sfVector2f rectangle_position;
     } HITBOX_T;
 
     typedef struct STATE {
@@ -50,18 +52,22 @@
     } STATE_T;
 
     typedef struct AIRCRAFT {
+        int i;
         int aircraft;
         int nb_aircraft;
         sfVector2f aircraft_pos_departure;
         sfVector2f aircraft_pos_arrival;
+        sfVector2f aircraft_get_pos;
         int aircraft_speed;
         int aircraft_delay;
     } AIRCRAFT_T;
 
     typedef struct TOWER {
+        int y;
         int tower;
         int nb_tower;
         sfVector2f tower_pos;
+        sfVector2f tower_get_pos;
         int tower_radius;
     } TOWER_T;
 

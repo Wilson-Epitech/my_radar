@@ -9,13 +9,13 @@
 
 int draw_sprite(RADAR_T *ALL)
 {
-    if (ALL->tower.tower == 1) {
+    if (ALL->tower.tower == 0) {
         sfRenderWindow_drawCircleShape(ALL->settings.window,
             ALL->hitbox.circle, NULL);
         sfRenderWindow_drawSprite(ALL->settings.window,
             ALL->sprite.sp_tower, NULL);
     }
-    if (ALL->aircraft.aircraft == 1) {
+    if (ALL->aircraft.aircraft == 0) {
         sfRenderWindow_drawSprite(ALL->settings.window,
             ALL->sprite.sp_aircraft, NULL);
     }
