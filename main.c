@@ -27,9 +27,8 @@ void game_window(RADAR_T *ALL)
 int flag_h(void)
 {
     const char *flag_h_info = "\n Hi\n this is my game,\n"
-    "you can find as a menu: play menu, escape menu (in game)"
-    ", game over menu(after losing the game).\n"
-    "Good game and good luck\n\n";
+    " you can find a rules menu.\n"
+    " Good simulation\n\n";
 
     my_putstr(flag_h_info);
     return 0;
