@@ -14,7 +14,7 @@
 
 <p align="center"><img src=".github/assets/my_radar-1.png" alt="My Radar" width="820"/></p>
 
-## En deux mots
+## Le projet en quelques mots
 
 Des avions décollent, traversent la carte et se détruisent s'ils se percutent, sauf s'ils sont dans la zone d'une tour de contrôle. Tout est décrit dans un fichier script qu'on passe au programme.
 
@@ -28,10 +28,6 @@ Des avions décollent, traversent la carte et se détruisent s'ils se percutent,
 
 <p align="center"><img src=".github/assets/my_radar.gif" alt="La simulation : les avions volent vers leur destination, les tours les protègent" width="760"/></p>
 <p align="center"><sub>La simulation : les avions volent vers leur destination, les tours les protègent</sub></p>
-
-## Sous le capot
-
-Le script est parsé en deux passes : on compte d'abord les avions et les tours, puis on remplit les tableaux. À chaque frame, chaque avion avance selon sa vitesse et l'horloge, puis on teste les collisions deux à deux, en ignorant les avions qui sont dans le rayon d'une tour.
 
 ## Lancer le projet
 
