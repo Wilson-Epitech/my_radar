@@ -34,5 +34,4 @@ Des avions décollent, traversent la carte et se détruisent s'ils se percutent,
 ```bash
 make
 ./my_radar examples/airspace.rdr
-# format : « A x1 y1 x2 y2 vitesse délai » pour un avion, « T x y rayon » pour une tour
 ```
